@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Info Q&A</title>
+</head>
+<body>
+    <h2>Ask Your Question (e.g. "Need info about 1001")</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if answer %}
+        <h3>Answer:</h3>
+        <pre>{{ answer }}</pre>
+    {% endif %}
+</body>
+</html>
